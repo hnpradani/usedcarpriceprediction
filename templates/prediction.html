@@ -1,0 +1,51 @@
+{%extends 'index.html'%}
+
+{%block content%}
+<div class="container p-4">
+    <div class="container bg-light">
+        <div class="card-body p-4">
+          <h5 class="card-title">USED CAR PRICE PREDICTION</h5>
+            <label for="exampleDataList" class="form-label">
+                Insert all the parameter needed to start the prediction :
+            </label>
+            <form method="POST">
+                <div class="mb-3 row">
+                    <label for="input_transmission" class="col-sm-2 col-form-label">Transmission</label>
+                    <div class="col-sm-10">
+                        <select class="form-select" name = "transmission">
+                            <option value="0">Manual</option>
+                            <option value="1">Automatic</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="input_power" class="col-sm-2 col-form-label">Power</label>
+                    <div class="col-sm-10">
+                    <input type="number" class="form-control" name="power" min ="34.20" max ="560.00" required>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="input_gap" class="col-sm-2 col-form-label">Year Gap</label>
+                    <div class="col-sm-10">
+                    <input type="number" class="form-control" name="gap" min="1" max="22" required>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="input_fuel" class="col-sm-2 col-form-label">Fuel Type</label>
+                    <div class="col-sm-10">
+                        <select class="form-select" name = "fuel">
+                            <option value="0">CNG</option>
+                            <option value="1">Diesel</option>
+                            <option value="2">LPG</option>
+                            <option value="3">Petrol</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-primary" type="submit" href = "/predict">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{%endblock%}
